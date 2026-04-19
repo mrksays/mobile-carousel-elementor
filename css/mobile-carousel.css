@@ -1,0 +1,124 @@
+/* ============================================================
+   Mobile Carousel for Elementor — mobile-carousel.css
+   ============================================================ */
+
+/* ── Base container ──────────────────────────────────────── */
+.mc-carousel.swiper {
+	overflow: hidden;
+	position: relative;
+}
+
+/* ── Wrapper & slides ────────────────────────────────────── */
+.mc-carousel .swiper-wrapper {
+	display: flex;
+	align-items: stretch;
+	box-sizing: border-box;
+}
+
+.mc-carousel .swiper-slide {
+	box-sizing: border-box;
+	height: auto;         /* allow equal-height slides */
+	flex-shrink: 0;
+}
+
+/* ── Arrow buttons ───────────────────────────────────────── */
+.mc-carousel .swiper-button-next,
+.mc-carousel .swiper-button-prev {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.92);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+	color: #111;
+	cursor: pointer;
+	border: none;
+	padding: 0;
+	transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+	/* Override Swiper default size */
+	--swiper-navigation-size: 16px;
+	top: 50%;
+	transform: translateY(-50%);
+	margin-top: 0;
+	z-index: 10;
+}
+
+.mc-carousel .swiper-button-next:hover,
+.mc-carousel .swiper-button-prev:hover {
+	background: #fff;
+	box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+}
+
+.mc-carousel .swiper-button-next:active,
+.mc-carousel .swiper-button-prev:active {
+	transform: translateY(-50%) scale(0.93);
+}
+
+/* Arrow icon colour */
+.mc-carousel .swiper-button-next::after,
+.mc-carousel .swiper-button-prev::after {
+	font-size: 14px;
+	font-weight: 700;
+	color: inherit;
+}
+
+/* Disabled state */
+.mc-carousel .swiper-button-disabled {
+	opacity: 0.35;
+	pointer-events: none;
+}
+
+/* ── Dot pagination ──────────────────────────────────────── */
+.mc-carousel .swiper-pagination {
+	position: relative;
+	bottom: auto;
+	margin-top: 14px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
+	line-height: 1;
+}
+
+.mc-carousel .swiper-pagination-bullet {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: #111;
+	opacity: 0.25;
+	cursor: pointer;
+	transition: opacity 0.25s ease, transform 0.25s ease, width 0.25s ease;
+	display: inline-block;
+	flex-shrink: 0;
+	margin: 0 !important;   /* override Swiper default */
+}
+
+.mc-carousel .swiper-pagination-bullet-active {
+	opacity: 1;
+	transform: scale(1.25);
+}
+
+/* ── Smooth slide transition ─────────────────────────────── */
+.mc-carousel .swiper-wrapper {
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Elementor flex-wrap fix on mobile ───────────────────── */
+@media (max-width: 600px){
+	.mc-carousel.elementor-element.elementor-element-29bdf8f.e-con-full.e-grid.only-team.e-con.e-child.mc-ready.swiper.swiper-initialized.swiper-horizontal.swiper-ios {
+    max-height: 370px !important;
+}
+}
+@media (max-width: 1024px) {
+	.mc-carousel.mc-ready.swiper > .e-con,
+	.mc-carousel.mc-ready.swiper .swiper-slide.e-con {
+		flex-wrap: wrap;
+		min-width: 0;
+	}
+	.mc-carousel.elementor-element.elementor-element-29bdf8f.e-con-full.e-grid.only-team.e-con.e-child.mc-ready.swiper.swiper-initialized.swiper-horizontal.swiper-ios {
+    max-height: 370px !important;
+}
+}
+
